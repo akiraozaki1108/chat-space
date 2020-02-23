@@ -1,0 +1,37 @@
+//中央上部
+.main
+  .main-header
+    .left-box
+      %p.left-box__user TEST
+      %ul.left-box__member
+        メンバー:
+        %li.left-box__name
+          akira
+    = link_to "#", class: "edit-btn" do
+      .edit-btn__right Edit
+
+      //中央メッセージ一覧
+  .messages
+    .message
+      .message-info
+        %p.message-info__name akiraakira
+        %p.message-info__data 2020/02/21(Fri) 13:03:35
+      %p.message__text アヒル
+    .message
+      .message-info
+        %p.message-info__name akiraakira
+        %p.message-info__data 2020/02/21(Fri) 13:03:36
+      %p.message__text コーヒー
+
+      //メッセージフォーム
+  .forms
+    %form.form
+      .input-box
+        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          = icon('fas', 'image')
+          %input{type: "file", class: "input-box__image__file"}
+        %input{type: "submit", class: "submit-btn" }  
+      
+
+

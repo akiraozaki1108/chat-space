@@ -1,0 +1,192 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+}
+
+
+//左側上部
+.side {
+  background-color: #253141;
+  width: 300px;
+  height: 100vh;
+  &-header {
+    background-color: #253141;
+    height: 100px;
+    padding: 0 20px;
+    color: white;
+    align-items: center;
+    display: flex;
+    &__box {
+      height: 20px;
+      width: 100%;
+      background-color: #333333;
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+      font-size: 16px;
+      .box-menu {
+        display: flex;
+        justify-content: flex-end;
+        list-style: none;
+        li {
+          a {
+            color: white;
+            margin-left: 0.3rem;
+          }
+        }
+      }
+    }  
+  }      
+
+
+  //左側グループ
+  .groups {
+    background-color: #2f3e51;
+    height: calc(100% - 100px);
+    padding: 20px 20px;
+    overflow: scroll;
+    &-box {
+      margin-bottom: 40px;
+      color: #ffffff;
+      font-weight: bold;
+      &__name {
+      font-size: 15px;
+      margin-bottom: 5px;
+      }
+      &__message {
+        font-size: 11px;
+      }
+    }
+  }       
+}
+
+
+
+
+
+//中央上部左側
+.main {
+  background-color: #ffffff;
+  width: calc(100vw - 300px);
+  &-header {
+    background-color: #ffffff;
+    height: 100px;
+    border-bottom:1px solid #eeeeee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    .left-box {
+      margin-top: 35px;
+      &__user {
+        margin-bottom: 15px;
+      }
+      &__member {
+        font-size: 12px;
+        color: #999999;
+        display: flex;
+        li {
+          margin-left: 5px;
+        }
+      }
+    }
+
+
+
+
+   //中央上部右側
+    .edit-btn{
+      text-decoration: none;
+      color: #38aef0;
+    }
+    .edit-btn__right {
+      height: 40px;
+      line-height: 40px;
+      padding: 0 20px;
+      border: solid 1px #38aef0;
+      text-decoration: none;
+    }
+  } 
+
+
+
+
+  //中央メッセージ一覧
+  .messages {
+    background-color: #fafafa;
+    height: calc(100% - 90px - 100px);
+    padding: 46px 40px;
+    overflow: scroll;
+    .message {
+      padding-bottom: 40px;
+      &-info {
+        display: flex;
+        margin-bottom: 12px;
+        &__name {
+          color: #333333;
+          font-size: 16px;
+        }
+        &__data {
+          margin-left: 10px;
+          font-size: 12px;
+          color: #999999;
+        }
+      }
+      .message__text {
+        color: #434A54;
+        font-size: 14px;
+        margin-bottom: 6px;
+      }
+    }  
+  }
+
+
+
+
+  //メッセージフォーム
+  .forms {
+    height: 90px;
+    background-color: #d2d2d2;
+    padding: 20px 40px;
+    .form {
+      display: flex;
+      .input-box {
+        display: flex;
+        width: 100%;
+        position: relative;
+        &__text {
+          height: 50px;
+          width: 100%;
+          color: #434a54;
+          border-style: none;
+          padding-left: 10px;
+          padding-right: 40px;
+        }
+        &__image {
+          position: absolute;
+          top: 10px;
+          right: 120px;
+          cursor: pointer;
+          font-size: 1.3rem;
+          &__file {
+            display: none;
+          }
+        }
+      }
+      .submit-btn {
+        width: 100px;
+        height: 50px;
+        padding: 0 30px;
+        margin-left: 15px;
+        background-color: #38aef0;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+
