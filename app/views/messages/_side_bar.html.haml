@@ -6,7 +6,7 @@
         = current_user.name
       %ui.box-menu
         %li.box-menu__edit-user
-          = link_to "#" do
+          = link_to new_group_path do
             = icon('fas', 'edit')
         %li.box-menu__new-group
           = link_to edit_user_path(current_user) do
@@ -14,7 +14,10 @@
 
     //左側グループ
   .groups
-    .groups-box
-      %p.groups-box__name teck::expart
-      %p.groups-box__message まだメッセージはありません。
-        
+    - current_user.groups.each do |group|
+      .groups-box
+        = link_to '#' do
+          .groups-box__name
+            = group.name 
+          .groups-box__message
+            まだメッセージはありません。
