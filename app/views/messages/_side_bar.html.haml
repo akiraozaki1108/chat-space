@@ -2,13 +2,14 @@
 .side
   .side-header
     .side-header__box
-      %p.box-username あきら
+      %p.box-username 
+        = current_user.name
       %ui.box-menu
         %li.box-menu__edit-user
           = link_to "#" do
             = icon('fas', 'edit')
         %li.box-menu__new-group
-          = link_to "#" do
+          = link_to edit_user_path(current_user) do
             = icon('fas', 'cog')
 
     //左側グループ
