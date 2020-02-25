@@ -2,16 +2,20 @@
 .main
   .main-header
     .left-box
-      %p.left-box__user TEST
+      %p.left-box__user 
+        = @group.name
       %ul.left-box__member
         メンバー:
         %li.left-box__name
-          akira
-    = link_to "#", class: "edit-btn" do
+          - @group.users.each do |user|
+            = user.name
+
+    = link_to edit_group_path(@group.id), class: "edit-btn" do
       .edit-btn__right Edit
 
       //中央メッセージ一覧
   .messages
+    = render @messages
     .message
       .message-info
         %p.message-info__name akiraakira
@@ -25,13 +29,14 @@
 
       //メッセージフォーム
   .forms
-    %form.form
-      .input-box
-        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-        %label{class: "input-box__image"}
-          = icon('fas', 'image')
-          %input{type: "file", class: "input-box__image__file"}
-        %input{type: "submit", class: "submit-btn" }  
+    = form_for [@group, @message], html: {class: "form"} do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
       
+
 
 
