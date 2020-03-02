@@ -16,11 +16,10 @@
       //中央メッセージ一覧
   .messages
     = render @messages
-    .message
         
     
 
-      //メッセージフォーム
+      
   .forms
     = form_for [@group, @message], html: {class: "form"} do |f|
       = f.text_field :content, class: 'form__message', placeholder: 'type a message'
