@@ -6,8 +6,8 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html
       format.json
+    end
   end
-end
 
   def edit 
   end
@@ -23,6 +23,6 @@ end
   private
 
   def user_params
-    params.require(:user).permit(:nami, :email)
+    params.require(:user).permit(:name, :email)
   end
 end
